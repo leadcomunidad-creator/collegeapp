@@ -662,7 +662,7 @@ body::before{
 .route-item:active{opacity:.7}
 .route-item.r-active{border-color:rgba(109,196,138,.3);background:linear-gradient(135deg,rgba(61,122,84,.12),var(--card))}
 .route-item.r-done{border-color:rgba(200,168,75,.2);background:rgba(200,168,75,.04)}
-.route-item.r-locked{opacity:.35;cursor:default;pointer-events:none}
+.route-item.r-locked{opacity:.65;cursor:pointer;pointer-events:all}
 .ri-num{font-family:'Bebas Neue',sans-serif;font-size:22px;width:22px;flex-shrink:0;line-height:1}
 .r-active .ri-num{color:var(--green-xl)}
 .r-done .ri-num{color:var(--gold)}
@@ -1662,33 +1662,35 @@ body::before{
   </div>
   <div class="rp-body">
 
-    <a class="route-item r-done" href="#" onclick="return false">
+    <a class="route-item r-active" href="https://deregresoacasa.netlify.app/" target="_blank">
       <span class="ri-num">1</span>
       <div class="ri-info">
         <div class="ri-name">De Regreso a Casa</div>
         <div class="ri-sub">Lucas 15 · El cuadro de Rembrandt</div>
       </div>
-      <span class="ri-badge hecho">✓ Hecho</span>
+      <span class="ri-badge activo">Disponible</span>
+      <span class="ri-arrow">→</span>
     </a>
 
-    <a class="route-item r-active" href="PLACEHOLDER_SIT_WALK_STAND">
+    <a class="route-item r-active" href="https://sitwalkstand.netlify.app/" target="_blank">
       <span class="ri-num">2</span>
       <div class="ri-info">
         <div class="ri-name">Sit · Walk · Stand</div>
         <div class="ri-sub">Efesios · Watchman Nee</div>
       </div>
-      <span class="ri-badge activo">Activo</span>
+      <span class="ri-badge activo">Disponible</span>
       <span class="ri-arrow">→</span>
     </a>
 
-    <div class="route-item r-locked">
+    <a class="route-item r-active" href="https://comoenelcielo.netlify.app/" target="_blank">
       <span class="ri-num">3</span>
       <div class="ri-info">
         <div class="ri-name">Como en el Cielo</div>
         <div class="ri-sub">Mateo 5–7 · Sermón del Monte</div>
       </div>
-      <span class="ri-badge bloq">Próximamente</span>
-    </div>
+      <span class="ri-badge activo">Disponible</span>
+      <span class="ri-arrow">→</span>
+    </a>
 
   </div>
 </div>
