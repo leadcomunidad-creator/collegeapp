@@ -357,6 +357,7 @@ function checkAccess() {
       <span><span class="ic">📖</span> Henri Nouwen · Lucas 15</span>
       <span><span class="ic">📅</span> 4 Semanas · 20 Días</span>
       <span><span class="ic">🏕</span> Campamento 1 — Identidad</span>
+      <span><span class="ic">💬</span> <a href="https://chat.whatsapp.com/KQBTskqmN9e0kt2BXB1ttk" target="_blank" style="color:inherit;text-decoration:underline">Grupo Wapp</a></span>
     </div>
     <div class="verse-b">
       <div class="verse-t">«Cuando todavía estaba lejos, su padre lo vio. Con el corazón palpitando, salió corriendo, lo abrazó y lo besó.»</div>
@@ -367,11 +368,11 @@ function checkAccess() {
 
 <nav class="week-nav">
   <div class="week-nav-inner">
-    <button class="wk-tab ti active" id="tab-intro" onclick="goTab('intro',this)">Introducción</button>
-    <button class="wk-tab w1" id="tab-w1" onclick="goWeek(0,this)">El Dios que Corre</button>
-    <button class="wk-tab w2" id="tab-w2" onclick="goWeek(1,this)">Pertenecer</button>
-    <button class="wk-tab w3" id="tab-w3" onclick="goWeek(2,this)">Tener la Razón</button>
-    <button class="wk-tab w4" id="tab-w4" onclick="goWeek(3,this)">Vivir desde el Amor</button>
+    <button class="wk-tab ti active" id="tab-intro" onclick="goTab('intro',this)">Mapa del Viaje</button>
+    <button class="wk-tab w1" id="tab-w1" onclick="goWeek(0,this)">El Dios que Corre<br><span style="font-size:8px;letter-spacing:1.5px;opacity:.65">(Semana 1)</span></button>
+    <button class="wk-tab w2" id="tab-w2" onclick="goWeek(1,this)">Pertenecer<br><span style="font-size:8px;letter-spacing:1.5px;opacity:.65">(Semana 2)</span></button>
+    <button class="wk-tab w3" id="tab-w3" onclick="goWeek(2,this)">Tener la Razón<br><span style="font-size:8px;letter-spacing:1.5px;opacity:.65">(Semana 3)</span></button>
+    <button class="wk-tab w4" id="tab-w4" onclick="goWeek(3,this)">Vivir desde el Amor<br><span style="font-size:8px;letter-spacing:1.5px;opacity:.65">(Semana 4)</span></button>
   </div>
 </nav>
 
@@ -403,7 +404,7 @@ function checkAccess() {
 
   <span class="s-label" style="margin-top:32px">Nuestras herramientas</span>
   <p class="intro-body">Este curso usa dos fuentes principales que se complementan, y una fuente sugerida que te animamos a buscar.</p>
-  <p class="intro-body"><strong>La Parábola.</strong> Lucas 15 — La historia del Hijo Pródigo en la versión The Message. Se recomienda también revisar una traducción como NBLA o NTV. Encontrarás esta parábola en su versión compacta en este mismo material.</p>
+  <p class="intro-body"><strong>La Parábola.</strong> Lucas 15 — La historia del Hijo Pródigo en la versión The Message. Se recomienda también revisar una traducción como NBLA. Encontrarás esta parábola en su versión compacta en este mismo material.</p>
   <p class="intro-body"><strong>El Cuadro.</strong> La obra maestra de Rembrandt, <em>El Regreso del Hijo Pródigo</em>, que Henri Nouwen utilizó para descifrar su propio viaje espiritual. Cada semana nos detendremos en un detalle específico del cuadro. El cuadro está insertado en las primeras páginas y adicional la parte analizada será ampliada para más detalle en el estudio de cada semana.</p>
   <p class="intro-body"><strong>El Libro (fuente adicional).</strong> Este material está inspirado en el libro de Henri Nouwen — <em>El Regreso del Hijo Pródigo</em>. Te animamos a leerlo como complemento, aunque no es obligatorio.</p>
 
@@ -563,6 +564,11 @@ function checkAccess() {
   <div class="block gold-tint">
     <div class="block-label gold">🙏 Oración</div>
     <div class="block-text" id="dayOracion"></div>
+  </div>
+
+  <div class="block" id="cierreBlock" style="display:none;text-align:center;border:1px solid rgba(200,168,75,.3);background:linear-gradient(135deg,rgba(61,122,84,.08),rgba(200,168,75,.05));border-radius:var(--r);padding:28px 20px;margin:18px 0">
+    <div class="block-label gold" style="margin-bottom:12px">✦ Cierre del Curso</div>
+    <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--gold-l);line-height:1.8;margin:0">Este recorrido llegó a su final. Pero la identidad de hijo no termina aquí — empieza a vivirse desde aquí.<br><br>Comenzaste con la imagen del Padre que corre. Terminaste con las manos que bendicen.<br>En el medio, recibiste el vestido, el anillo y las sandalias.<br><br>Ahora sal a hacer lo mismo por alguien más.</p>
   </div>
 
   <div class="day-actions">
@@ -797,7 +803,7 @@ var swsDays = [
     pregunta:"¿Hay algún área de tu vida donde llevas la cuenta de lo que has dado o hecho para Dios, con una sensación silenciosa de que algo se te debe? ¿Puedes nombrarla honestamente?",
     practica:"<em>Aplicación de la Semana:</em> Cada noche esta semana, antes de dormir, cierra los puños con fuerza sobre tus rodillas. Reconoce lo que estás aferrado: tu necesidad de control, tus juicios, tu resentimiento. Luego abre las manos y gíralas hacia arriba. Di en voz baja: «Suelto mi justicia propia. Confío en la bondad del Padre.» Permanece así un minuto.",
     oracion:"«Padre, reconozco que a veces me he parado afuera de Tu fiesta con el bastón en las manos, convencido de que tenía razón. Hoy quiero soltar eso. No porque no duela, sino porque confío en que lo que hay adentro es mejor que lo que estoy apretando afuera. Amén.»",
-    detalle:"Detalle del cuadro: Las manos del Padre sobre los hombros del hijo",
+    detalle:"Detalle del cuadro: Las manos del Padre. Una fuerte que sostiene, una suave que acaricia.",
     segs:[1,0,0,0,0]
   },
   {
@@ -835,7 +841,7 @@ var swsDays = [
     ideas:["El bastón del hijo mayor era funcional. No era un mal hábito; era un sistema de supervivencia que había servido durante años. Reconocer que ya no necesitas sostenerlo solo no invalida el pasado; lo reencuadra.","Confiar «con todo el corazón» incluye las partes del corazón que todavía dudan. La confianza total no es la ausencia de dudas; es la decisión de no dejar que las dudas gobiernen.","El control que sostienes sobre tu vida espiritual no la hace más segura; la hace más pequeña. Lo que controlas no puede crecer más allá de lo que puedes controlar.","Dios no pide que entiendas el plan antes de confiar. Pide que confíes en Quien tiene el plan.","El hijo mayor tenía al padre a metros de distancia. No necesitaba el bastón. Pero nunca había probado pararse sin él."],
     anchor:"«Hijo siempre. Nada que exigir. Todo por confiar.»",
     pregunta:"¿Cuál es el bastón que más te cuesta soltar? ¿Tu necesidad de tener razón, tu control sobre ciertos resultados, tu imagen de creyente comprometido, tu autosuficiencia? Sé específico.",
-    practica:"Cada noche esta semana, antes de dormir, haz esto: Cierra tus manos con fuerza. Reconoce lo que estás aferrado: tu control, tus juicios, tu necesidad de tener la razón. Mantén la tensión unos segundos y di: «Señor, suelto mi justicia propia. Suelto mi necesidad de que las cosas sean a mi manera.» Luego abre las manos y gíralas hacia arriba. Di: «Padre, recibo Tu gracia. Confío en Tu bondad más que en mi esfuerzo. Entro en Tu descanso.»",
+    practica:"Cada noche esta semana, antes de dormir, cierra los puños con fuerza sobre tus rodillas. Reconoce lo que estás aferrado: tu necesidad de control, tus juicios, tu resentimiento. Luego abre las manos y gíralas hacia arriba. Di en voz baja: «Señor, suelto mi justicia propia. Suelto mi necesidad de que las cosas sean a mi manera.» Luego abre las manos y gíralas hacia arriba. Di: «Padre, recibo Tu gracia. Confío en Tu bondad más que en mi esfuerzo. Entro en Tu descanso.»",
     oracion:"«Padre, hoy suelto el bastón. No como un acto de fuerza, sino como un acto de fe. Reconozco que he estado sosteniéndome con algo que Tú nunca pediste que cargara solo. Que mis manos abiertas esta noche sean la señal de que confío en que Tú me sostienes.»",
     segs:[1,1,1,1,0]
   },
@@ -866,7 +872,7 @@ var swsDays = [
     pregunta:"¿Hay alguien en tu vida que necesita que seas para él o ella lo que el Padre fue para el hijo que regresó? ¿Qué te detiene de moverte hacia esa persona?",
     practica:"<em>Aplicación de la Semana:</em> Identifica una persona en tu entorno que sea difícil de amar —un «hijo pródigo» o un «hermano mayor» en tu vida. Esta semana, realiza un acto concreto de bendición hacia esa persona con una condición: debe ser secreto y no debe requerir ningún agradecimiento.",
     oracion:"«Padre, empecé este viaje preguntándome si eras el tipo de Dios que espera con los brazos cruzados. Hoy lo sé: eres el que corre. Ahora, con estas manos que Tú llenaste, quiero aprender a dar lo que recibí. No para que me quieras más. Sino porque ya sé que me quieres así. Amén.»",
-    detalle:"Cuadro completo: El Padre con las manos sobre el hijo — vista frontal",
+    detalle:"Detalle del cuadro: El Padre con las manos sobre el hijo — la bendición como comisión.",
     segs:[1,0,0,0,0]
   },
   {
@@ -1025,6 +1031,7 @@ function loadDay(idx) {
   document.getElementById('dayPregunta').innerHTML = d.pregunta;
   document.getElementById('dayPractica').innerHTML = d.practica;
   document.getElementById('dayOracion').innerHTML = d.oracion;
+  document.getElementById('cierreBlock').style.display = (idx === swsDays.length - 1) ? 'block' : 'none';
   /* video block */
   var vBlock = document.getElementById('videoBlock');
   var vFrame = document.getElementById('videoFrame');
