@@ -29,9 +29,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 @media(max-width:679px){.nav-links{display:none}}
 
 /* HERO */
-.course-hero{padding:100px 24px 52px;background:linear-gradient(to bottom,#080C12 0%,#0c1f18 60%,var(--surface) 100%);position:relative;overflow:hidden}
-.course-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:60%;background:radial-gradient(ellipse 70% 50% at 20% 0%,rgba(61,122,84,.15) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 10%,rgba(200,168,75,.08) 0%,transparent 60%);pointer-events:none}
-.ch-inner{max-width:660px;margin:0 auto;position:relative;z-index:1}
+.course-hero{padding:100px 24px 52px;background:linear-gradient(90deg,rgba(8,12,18,.72) 0%,rgba(8,12,18,.46) 44%,rgba(8,12,18,.12) 100%),linear-gradient(to bottom,rgba(8,12,18,.16) 0%,rgba(8,12,18,.24) 70%,var(--surface) 100%),url('../recursos/drc/drc-hero-desktop.png') center/cover no-repeat;position:relative;overflow:hidden;min-height:560px;display:flex;align-items:flex-end}
+.course-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,18,.64) 0%,rgba(8,12,18,.28) 48%,rgba(8,12,18,.04) 100%);pointer-events:none}
+.course-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,12,18,.04) 0%,rgba(8,12,18,.10) 62%,var(--surface) 100%);pointer-events:none}
+.ch-inner{max-width:660px;margin:0 auto;position:relative;z-index:2}
 .ch-back{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:28px;transition:color .2s;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;padding:0}
 .ch-back:hover{color:var(--green-xl)}
 .ch-eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--green-l);margin-bottom:10px}
@@ -168,7 +169,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:40px 24
   .btn-nav{display:none}
 
   /* Hero */
-  .course-hero{padding:82px 16px 40px}
+  .course-hero{padding:82px 16px 40px;min-height:520px;background-image:linear-gradient(90deg,rgba(8,12,18,.70) 0%,rgba(8,12,18,.42) 52%,rgba(8,12,18,.10) 100%),linear-gradient(to bottom,rgba(8,12,18,.12) 0%,rgba(8,12,18,.22) 72%,var(--surface) 100%),url('../recursos/drc/drc-hero-tablet.png');background-position:center top}
   .ch-eyebrow{font-size:8px}
   .ch-back{font-size:10px;margin-bottom:20px}
   .ch-meta{gap:10px}
@@ -208,7 +209,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:40px 24
   .nb-sub{display:none}
 
   /* Hero */
-  .course-hero{padding:72px 14px 32px}
+  .course-hero{padding:72px 14px 32px;min-height:600px;background-image:linear-gradient(to bottom,rgba(8,12,18,.52) 0%,rgba(8,12,18,.36) 46%,rgba(8,12,18,.14) 70%,var(--surface) 100%),url('../recursos/drc/drc-hero-mobile.png');background-position:center top;align-items:flex-end}
   .ch-back{font-size:9px;letter-spacing:1.5px;margin-bottom:16px}
   .ch-eyebrow{font-size:7.5px;letter-spacing:2px}
   .ch-sub{margin-bottom:16px}
@@ -567,8 +568,8 @@ function checkAccess() {
   </div>
 
   <div class="block" id="cierreBlock" style="display:none;text-align:center;border:1px solid rgba(200,168,75,.3);background:linear-gradient(135deg,rgba(61,122,84,.08),rgba(200,168,75,.05));border-radius:var(--r);padding:28px 20px;margin:18px 0">
-    <div class="block-label gold" style="margin-bottom:12px">✦ Cierre del Curso</div>
-    <p style="font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--gold-l);line-height:1.8;margin:0">Este recorrido llegó a su final. Pero la identidad de hijo no termina aquí — empieza a vivirse desde aquí.<br><br>Comenzaste con la imagen del Padre que corre. Terminaste con las manos que bendicen.<br>En el medio, recibiste el vestido, el anillo y las sandalias.<br><br>Ahora sal a hacer lo mismo por alguien más.</p>
+    <div class="block-label gold" id="cierreTitle" style="margin-bottom:12px">✦ Cierre del Curso</div>
+    <p id="cierreText" style="font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--gold-l);line-height:1.8;margin:0">Este recorrido llegó a su final. Pero la identidad de hijo no termina aquí — empieza a vivirse desde aquí.<br><br>Comenzaste con la imagen del Padre que corre. Terminaste con las manos que bendicen.<br>En el medio, recibiste el vestido, el anillo y las sandalias.<br><br>Ahora sal a hacer lo mismo por alguien más.</p>
   </div>
 
   <div class="day-actions">
@@ -719,7 +720,9 @@ var swsDays = [
     practica:"<em>La Oración de la Recepción:</em> Busca un lugar tranquilo y siéntate cómodamente. Cierra los ojos. Imagina la escena del cuadro de Rembrandt: tú estás arrodillado, cansado, con la cabeza apoyada en el pecho del Padre. Siente la mano fuerte sobre tu hombro: «Estás seguro. Yo te sostengo.» Siente la mano suave sobre tu espalda: «Eres amado. Descansa.» No ores pidiendo cosas. No confieses pecados. No prometas mejorar. Tu única tarea es quedarte quieto bajo esas manos durante 5 minutos. Si tu mente se distrae o sientes culpa, repite suavemente: «Me dejo encontrar. Me dejo amar.»",
     oracion:"«Padre, iniciamos juntos este camino. No como alguien que intenta merecer el acceso a Tu casa, sino como alguien que acaba de descubrir que la puerta ya estaba abierta. Gracias porque corriste. Gracias porque seguirás corriendo. Haz que aprenda a vivir como hijo, no solo a visitar Tu casa de vez en cuando. Amén.»",
     segs:[1,1,1,1,1],
-    videoId:"cBen5jWbHmk"
+    videoId:"_-pAmF8ul08",
+    cierreTitulo:"✦ Cierre de la Semana 1 → Puente hacia la Semana 2",
+    cierreTexto:"Esta semana puso delante de ti la imagen correcta del Padre: no el evaluador que espera con los brazos cruzados, sino el Padre que corre. Antes de que el hijo termine su discurso, antes de que pueda demostrar cambio, antes de que tenga algo que ofrecer, el Padre ya cruzó la distancia.<br><br>Pero el abrazo no es el final. El abrazo restaura una identidad. Y cuando el hijo vuelve a casa, la siguiente pregunta es inevitable: ¿vivirá como hijo o seguirá pensando como jornalero?<br><br>La próxima semana entra exactamente en esa tensión. Pertenecer antes de hacer. Recibir antes de producir. Servir desde la casa, no desde la deuda."
   },
   /* W2 */
   {
@@ -788,7 +791,9 @@ var swsDays = [
     practica:"Esta semana, realiza un acto de servicio o bondad que cumpla tres condiciones: que sea concreto, que nadie lo sepa, y que no esperes ningún agradecimiento. Puede ser algo pequeño: pagar algo anónimamente, hacer una tarea que no te corresponde, orar en secreto por alguien que no lo sabe. Observa qué pasa en tu corazón cuando sirves sin ningún retorno posible. Eso te dirá algo importante sobre desde dónde estás sirviendo normalmente.",
     oracion:"«Padre, quiero que lo que hago nazca del amor que recibo de Ti y no del miedo de perderlo. Hoy quiero servir desde la plenitud, no desde el vacío. Llena primero. Luego lo demás vendrá solo.»",
     segs:[1,1,1,1,1],
-    videoId:"g6AqM7yLMHo"
+    videoId:"ITN7Guf5b-I",
+    cierreTitulo:"✦ Cierre de la Semana 2 → Puente hacia la Semana 3",
+    cierreTexto:"Esta semana corrigió el orden: el vestido, el anillo y las sandalias vienen antes del desempeño. El Padre no restaura al hijo después de una temporada de prueba; lo restaura en el acto, públicamente, como hijo.<br><br>Pero hay otra forma de perderse sin salir de casa. Hay una distancia más difícil de detectar porque se disfraza de obediencia, responsabilidad y razón. El hijo mayor no está entre los cerdos. Está cerca de la casa. Pero no puede entrar a la fiesta.<br><br>La próxima semana mira ese peligro de frente: tener la razón y perder la relación. Obedecer sin amar. Cumplir sin recibir. Estar cerca del Padre y seguir lejos de su corazón."
   },
   /* W3 */
   {
@@ -857,7 +862,9 @@ var swsDays = [
     practica:"Esta semana, identifica a alguien con quien tengas esa dificultad: alguien a quien te cuesta celebrar, alguien cuya bendición te genera un nudo interno. No para fingir alegría que no sientes. Sino para hacer lo que el padre hizo: salir de la comodidad de tu posición y moverse hacia esa persona. Puede ser una palabra de aliento, un gesto, una oración por esa persona. Un movimiento pequeño pero real, en dirección contraria a la del hijo mayor que se quedó afuera.",
     oracion:"«Padre, quiero entrar a la fiesta. No porque lo entienda todo ni porque haya soltado todo. Sino porque me llamas desde adentro y eso es suficiente razón para cruzar la puerta. Aquí voy, con las manos abiertas, sin el bastón.»",
     segs:[1,1,1,1,1],
-    videoId:"2YY8RGJUyvc"
+    videoId:"pteWplE_anw",
+    cierreTitulo:"✦ Cierre de la Semana 3 → Puente hacia la Semana 4",
+    cierreTexto:"Esta semana te hizo mirar al hijo que nunca se fue, pero tampoco entró. El hijo mayor revela que uno puede estar cerca de la casa, hacer lo correcto, sostener la responsabilidad, y aun así vivir fuera de la fiesta.<br><br>La gracia del Padre confronta tanto al que se fue como al que se quedó. Sale al camino por el hijo menor y sale de la fiesta por el hijo mayor. A los dos les ofrece lo mismo: entrar al gozo del Padre.<br><br>La última semana no se queda solo en recibir el abrazo. La madurez de hijo consiste en reflejar lo recibido. Las manos que fueron sostenidas por el Padre están llamadas a bendecir. El camino termina mirando cómo vivir desde el amor."
   },
   /* W4 */
   {
@@ -926,7 +933,7 @@ var swsDays = [
     practica:"Identifica una persona en tu entorno que sea difícil de amar, que no te caiga bien, o que sientas que no merece tu bondad. Puede ser un «hijo pródigo» o un «hermano mayor» en tu vida. Realiza un acto concreto de bendición hacia esa persona esta semana con una condición: debe ser secreto y no debe requerir agradecimiento. Algunas opciones: orar por ella cinco minutos al día durante toda la semana; enviar un regalo o gesto anónimo; hablar bien de ella a sus espaldas —bendecirla cuando no está; hacer una tarea que le correspondía a ella sin decírselo. Observa qué sucede en tu corazón al hacerlo.",
     oracion:"«Padre, empecé este viaje preguntándome si eras el tipo de Dios que espera con los brazos cruzados. Hoy lo sé: eres el que corre. Empecé sin saber bien si podía pertenecer a tu casa sin merecerlo. Hoy tengo el vestido puesto, el anillo en el dedo y las sandalias calzadas. No porque me los gané. Porque los recibí. Y ahora, con estas manos que Tú llenaste, quiero aprender a dar lo que recibí. No para que me quieras más. Sino porque ya sé que me quieres así. Y eso es suficiente para empezar a vivir diferente. Amén.»",
     segs:[1,1,1,1,1],
-    videoId:"T7tp3pQaVlI"
+    videoId:"h0_9sExm9Sg"
   }
 ];
 
@@ -1031,7 +1038,20 @@ function loadDay(idx) {
   document.getElementById('dayPregunta').innerHTML = d.pregunta;
   document.getElementById('dayPractica').innerHTML = d.practica;
   document.getElementById('dayOracion').innerHTML = d.oracion;
-  document.getElementById('cierreBlock').style.display = (idx === swsDays.length - 1) ? 'block' : 'none';
+  var cierreBlock = document.getElementById('cierreBlock');
+  var cierreTitle = document.getElementById('cierreTitle');
+  var cierreText = document.getElementById('cierreText');
+  if(d.cierreTexto){
+    cierreTitle.innerHTML = d.cierreTitulo || '✦ Cierre de la Semana';
+    cierreText.innerHTML = d.cierreTexto;
+    cierreBlock.style.display = 'block';
+  } else if(idx === swsDays.length - 1){
+    cierreTitle.innerHTML = '✦ Cierre del Curso';
+    cierreText.innerHTML = 'Este recorrido llegó a su final. Pero la identidad de hijo no termina aquí — empieza a vivirse desde aquí.<br><br>Comenzaste con la imagen del Padre que corre. Terminaste con las manos que bendicen.<br>En el medio, recibiste el vestido, el anillo y las sandalias.<br><br>Ahora sal a hacer lo mismo por alguien más.';
+    cierreBlock.style.display = 'block';
+  } else {
+    cierreBlock.style.display = 'none';
+  }
   /* video block */
   var vBlock = document.getElementById('videoBlock');
   var vFrame = document.getElementById('videoFrame');

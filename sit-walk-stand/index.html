@@ -29,9 +29,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;height:58px;display:flex;ali
 @media(max-width:679px){.nav-links{display:none}}
 
 /* HERO */
-.course-hero{padding:100px 24px 52px;background:linear-gradient(to bottom,#080C12 0%,#0c1f18 60%,var(--surface) 100%);position:relative;overflow:hidden}
-.course-hero::before{content:'';position:absolute;top:0;left:0;right:0;height:60%;background:radial-gradient(ellipse 70% 50% at 20% 0%,rgba(61,122,84,.15) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 80% 10%,rgba(200,168,75,.08) 0%,transparent 60%);pointer-events:none}
-.ch-inner{max-width:660px;margin:0 auto;position:relative;z-index:1}
+.course-hero{padding:100px 24px 52px;background:linear-gradient(90deg,rgba(8,12,18,.72) 0%,rgba(8,12,18,.46) 44%,rgba(8,12,18,.12) 100%),linear-gradient(to bottom,rgba(8,12,18,.16) 0%,rgba(8,12,18,.24) 70%,var(--surface) 100%),url('../recursos/sws/sws-hero-desktop.png') center/cover no-repeat;position:relative;overflow:hidden;min-height:560px;display:flex;align-items:flex-end}
+.course-hero::before{content:'';position:absolute;inset:0;background:linear-gradient(90deg,rgba(8,12,18,.64) 0%,rgba(8,12,18,.28) 48%,rgba(8,12,18,.04) 100%);pointer-events:none}
+.course-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,rgba(8,12,18,.04) 0%,rgba(8,12,18,.10) 62%,var(--surface) 100%);pointer-events:none}
+.ch-inner{max-width:660px;margin:0 auto;position:relative;z-index:2}
 .ch-back{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);text-decoration:none;margin-bottom:28px;transition:color .2s;background:none;border:none;cursor:pointer;font-family:'DM Sans',sans-serif;padding:0}
 .ch-back:hover{color:var(--green-xl)}
 .ch-eyebrow{font-size:9px;letter-spacing:3px;text-transform:uppercase;font-weight:700;color:var(--green-l);margin-bottom:10px}
@@ -168,7 +169,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:40px 24
   .btn-nav{display:none}
 
   /* Hero */
-  .course-hero{padding:82px 16px 40px}
+  .course-hero{padding:82px 16px 40px;min-height:520px;background-image:linear-gradient(90deg,rgba(8,12,18,.70) 0%,rgba(8,12,18,.42) 52%,rgba(8,12,18,.10) 100%),linear-gradient(to bottom,rgba(8,12,18,.12) 0%,rgba(8,12,18,.22) 72%,var(--surface) 100%),url('../recursos/sws/sws-hero-tablet.png');background-position:center top}
   .ch-eyebrow{font-size:8px}
   .ch-back{font-size:10px;margin-bottom:20px}
   .ch-meta{gap:10px}
@@ -208,7 +209,7 @@ footer{background:var(--deep);border-top:1px solid var(--border);padding:40px 24
   .nb-sub{display:none}
 
   /* Hero */
-  .course-hero{padding:72px 14px 32px}
+  .course-hero{padding:72px 14px 32px;min-height:600px;background-image:linear-gradient(to bottom,rgba(8,12,18,.52) 0%,rgba(8,12,18,.36) 46%,rgba(8,12,18,.14) 70%,var(--surface) 100%),url('../recursos/sws/sws-hero-mobile.png');background-position:center top;align-items:flex-end}
   .ch-back{font-size:9px;letter-spacing:1.5px;margin-bottom:16px}
   .ch-eyebrow{font-size:7.5px;letter-spacing:2px}
   .ch-sub{margin-bottom:16px}
@@ -553,6 +554,11 @@ function checkAccess() {
     <div class="block-text" id="dayOracion"></div>
   </div>
 
+  <div class="block" id="cierreBlock" style="display:none;text-align:center;border:1px solid rgba(200,168,75,.3);background:linear-gradient(135deg,rgba(61,122,84,.08),rgba(200,168,75,.05));border-radius:var(--r);padding:28px 20px;margin:18px 0">
+    <div class="block-label gold" id="cierreTitle" style="margin-bottom:12px">✦ Cierre del Curso</div>
+    <p id="cierreText" style="font-family:'Crimson Pro',serif;font-style:italic;font-size:17px;color:var(--gold-l);line-height:1.8;margin:0"></p>
+  </div>
+
   <div class="day-actions">
     <button class="btn btn-primary" id="btnDone" onclick="markDone(this)" style="width:100%">✓ Marcar día completado</button>
     <button class="btn btn-ghost" style="width:100%" onclick="window.open('https://chat.whatsapp.com/GMiGH5QAroPC4petVaDeaK','_blank')">💬 Ir al grupo de este curso</button>
@@ -694,7 +700,9 @@ var swsDays = [
     practica:"Dedica quince minutos de quietud hoy sin pedir nada, sin confesar nada, sin planificar nada. Solo siéntate ante Dios con las manos abiertas. Permite que Él sea el Dador. Tú solo recibe.",
     oracion:"«Padre, me cuesta recibir sin merecer. Pero hoy elijo creer que puedes amarme así. Vengo con las manos vacías. Eres el Padre que corre. Yo soy el hijo que regresa. Gracias.»",
     segs:[1,1,1,1,1],
-    videoId:"3STQv2So6Uw"
+    videoId:"jf7kjw2MP58",
+    cierreTitulo:"✦ Cierre de la Semana 1 → Puente hacia la Semana 2",
+    cierreTexto:"Esta semana plantó el fundamento: tu vida con Dios comienza en lo que Él ya hizo, no en lo que tú debes hacer. Estás sentado en Cristo. Eso no es el final del viaje espiritual; es su punto de partida correcto.<br><br>Y ahora que sabes dónde estás sentado, surge de manera natural la siguiente pregunta: ¿cómo se ve eso en la vida de los martes? La próxima semana responde exactamente eso —no como una nueva lista de deberes, sino como la consecuencia natural de lo que ya es verdad. Porque estás sentado en Cristo, ahora caminas. El caminar no produce la posición; la posición produce el caminar."
   },
   /* W2 */
   {
@@ -762,7 +770,9 @@ var swsDays = [
     practica:"Esta semana elige una persona de tu entorno más cercano y realiza un acto concreto de servicio o gracia hacia ella que no hayas planeado y que no espere reconocimiento. Hazlo hoy o mañana, sin anunciar lo que hiciste.",
     oracion:"«Padre, es más fácil ser espiritual en los momentos de adoración que en mi casa los lunes. Hoy te pido que Tu vida en mí sea real donde más importa: en las relaciones que más me cuestan. Que Tu gracia fluya a través de mí hacia ellos.»",
     segs:[1,1,1,1,1],
-    videoId:"ngL603TIgcg"
+    videoId:"hfwnRk9iCLE",
+    cierreTitulo:"✦ Cierre de la Semana 2 → Puente hacia la Semana 3",
+    cierreTexto:"Esta semana fue el primer paso de salir del fundamento a la práctica. Pero nota lo que no ocurrió: no recibiste una lista nueva de deberes. Recibiste la comprensión de que porque estás sentado en Cristo, ahora caminas —y ese caminar fluye de Él, no de tu esfuerzo.<br><br>La próxima semana añade una dimensión que muchos creyentes ignoran hasta que una crisis los fuerza: el tiempo importa. No basta con caminar; hay que caminar con urgencia y sabiduría, aprovechando el momento que Dios tiene disponible ahora. La madurez que no llega a tiempo pierde oportunidades que no vuelven."
   },
   /* W3 */
   {
@@ -830,7 +840,9 @@ var swsDays = [
     practica:"Escribe en un papel la respuesta a esta pregunta: «Si Dios tiene un propósito específico para mí en los próximos seis meses, ¿qué área de mi vida espiritual debería crecer ahora para estar disponible para ese propósito?» Luego toma una decisión pequeña pero concreta en esa dirección esta semana —antes del viernes.",
     oracion:"«Padre, quiero ser un instrumento disponible, no uno que siempre llega tarde. Dame Tu urgencia: no la del miedo sino la del amor. Que pueda decir con Pablo: sigo avanzando. No me quedo quieto cuando puedo avanzar hacia Ti.»",
     segs:[1,1,1,1,1],
-    videoId:"wxsJ_RFBTQs"
+    videoId:"FEoOzL7GKdw",
+    cierreTitulo:"✦ Cierre de la Semana 3 → Puente hacia la Semana 4",
+    cierreTexto:"Esta semana añadió la dimensión que muchos creyentes descuidan hasta que una crisis los fuerza: el tiempo importa. Madurar a tiempo, llenar el vaso mientras hay tiempo, cooperar con el Espíritu en los días ordinarios —todo eso tiene valor real en el corazón de Dios y consecuencias reales en la historia.<br><br>La próxima semana corona todo el recorrido con la comprensión más liberadora de la guerra espiritual: no luchas por ganar una victoria todavía pendiente. Ya ganaste. La obra fue de Cristo, completa, en la Cruz. Tu tarea ahora es mantenerte de pie en el terreno que Él ya conquistó y te entregó."
   },
   /* W4 */
   {
@@ -898,7 +910,7 @@ var swsDays = [
     practica:"Esta noche, antes de dormir, escribe una frase de agradecimiento —no una petición— sobre ese tema que más te tiene pensando hoy. Declara específicamente lo que Cristo ya hizo y la solución que ya existe. Lee eso en voz alta como una decisión, sin importar si lo sientes o no.",
     oracion:"«Padre, en lugar de suplicar por lo que ya ganaste, hoy te doy las gracias por haberlo hecho. La batalla que enfrento ya se resolvió en la Cruz. Me mantengo en pie no por mi fuerza ni por qué tanto llore al orar, sino porque Tu victoria es el suelo firme donde estoy parado. A Ti sea el crédito.»",
     segs:[1,1,1,1,1],
-    videoId:"SdrKjAuFMjA"
+    videoId:"3EUDOhNsaVg"
   }
 ];
 
@@ -993,6 +1005,20 @@ function loadDay(idx) {
   document.getElementById('dayPregunta').innerHTML = d.pregunta;
   document.getElementById('dayPractica').innerHTML = d.practica;
   document.getElementById('dayOracion').innerHTML = d.oracion;
+  var cierreBlock = document.getElementById('cierreBlock');
+  var cierreTitle = document.getElementById('cierreTitle');
+  var cierreText = document.getElementById('cierreText');
+  if(d.cierreTexto){
+    cierreTitle.innerHTML = d.cierreTitulo || '✦ Cierre de la Semana';
+    cierreText.innerHTML = d.cierreTexto;
+    cierreBlock.style.display = 'block';
+  } else if(idx === swsDays.length - 1){
+    cierreTitle.innerHTML = '✦ Cierre del Curso';
+    cierreText.innerHTML = 'Este recorrido llegó a su final. Siéntate. Camina. Mantente en pie. Comenzaste descansando en la posición que Dios ya estableció —no como meta sino como hecho. Luego caminaste desde esa posición, no por obligación sino como consecuencia natural de quien ya eres en Cristo. Añadiste urgencia y sabiduría para no desperdiciar el tiempo que Dios tiene en el presente. Y ahora terminas de pie: firme, sereno, no porque el enemigo no exista o no ataque, sino porque el terreno donde estás parado fue conquistado por Cristo y te fue dado gratuitamente.<br><br>No te mueves de ahí. Eso es todo lo que se te pide. Y es suficiente.<br><br>| &quot;A él sea la gloria en la iglesia mediante Cristo Jesús por todos los siglos, para siempre y para siempre. Amén.&quot; — Efesios 3:21 (NTV) |';
+    cierreBlock.style.display = 'block';
+  } else {
+    cierreBlock.style.display = 'none';
+  }
   /* video block */
   var vBlock = document.getElementById('videoBlock');
   var vFrame = document.getElementById('videoFrame');
