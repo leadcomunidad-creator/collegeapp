@@ -8,6 +8,8 @@
 <meta property="og:title" content="El College · LHSCOL">
 <meta property="og:description" content="Todo lo que necesitas para ir más profundo.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="logo-lhscol.png">
+<link rel="icon" type="image/png" href="logo-lhscol.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500;1,9..144,600&display=swap" rel="stylesheet">
@@ -51,7 +53,7 @@ ul,ol{padding:0;list-style:none}
 .site-header{border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:20px 32px;padding-top:20px;padding-bottom:20px}
 .brand{display:flex;align-items:center;gap:14px}
-.brand .mark{display:grid;place-items:center;width:56px;height:56px;border:1px solid currentColor;border-radius:50%;font-family:var(--serif);font-size:17px;font-weight:600;letter-spacing:.04em}
+.brand img{width:56px;height:56px;object-fit:contain}
 .brand .sep{width:1px;height:18px;background:var(--ink);opacity:.4}
 .brand .name{font-family:var(--serif);font-style:italic;font-weight:500;font-size:21px}
 .primary{display:flex;gap:8px 32px;font-size:13px;font-weight:700;letter-spacing:.1em}
@@ -129,7 +131,7 @@ ul,ol{padding:0;list-style:none}
 /* Pie */
 .site-footer{background:var(--ink);color:var(--paper);border-top:1px solid rgba(245,239,228,.18)}
 .site-footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:32px 48px;padding-top:48px;padding-bottom:56px}
-.site-footer .brand .mark{width:60px;height:60px}
+.site-footer .brand img{width:60px;height:60px;filter:invert(1)}
 .site-footer .brand .sep{background:var(--paper)}
 .site-footer .tag{font-size:15px;line-height:1.5;color:var(--cream);max-width:340px;margin-top:16px}
 .site-footer .col{flex:1 1 320px;min-width:0}
@@ -139,7 +141,7 @@ ul,ol{padding:0;list-style:none}
 /* ===== Tablet ===== */
 @media (max-width:1099px){
   .bar{flex-wrap:wrap;padding-top:18px;padding-bottom:0}
-  .brand .mark{width:48px;height:48px}
+  .brand img{width:48px;height:48px}
   .brand .name{font-size:20px}
   .primary{order:3;flex-basis:100%;margin-top:14px;padding:14px 0;border-top:1px solid var(--line);font-size:12px;gap:8px 30px}
   .hero{grid-template-columns:1fr 340px;gap:40px;padding-top:64px;padding-bottom:80px}
@@ -180,14 +182,14 @@ ul,ol{padding:0;list-style:none}
   .closing h2{font-size:52px}
   .closing p{font-size:18px}
   .site-footer .wrap{padding-top:40px;padding-bottom:48px}
-  .site-footer .brand .mark{width:56px;height:56px}
+  .site-footer .brand img{width:56px;height:56px}
 }
 
 /* ===== Móvil ===== */
 @media (max-width:699px){
   .bar{flex-wrap:nowrap;padding-top:10px;padding-bottom:10px;gap:10px}
   .brand{gap:10px}
-  .brand .mark{width:44px;height:44px}
+  .brand img{width:44px;height:44px}
   .brand .sep{height:16px}
   .brand .name{font-size:18px}
   .bar-cta{display:none}
@@ -252,7 +254,7 @@ ul,ol{padding:0;list-style:none}
   .closing .btn{width:100%}
   .site-footer .wrap{padding-top:36px;padding-bottom:40px;gap:24px}
   .site-footer .brand{gap:12px}
-  .site-footer .brand .mark{width:52px;height:52px}
+  .site-footer .brand img{width:52px;height:52px}
   .site-footer .brand .name{font-size:18px}
   .site-footer .tag{font-size:14px;margin-top:14px}
   .foot-nav{font-size:12px;gap:12px 22px}
@@ -266,7 +268,7 @@ ul,ol{padding:0;list-style:none}
 <header class="site-header" id="top">
   <div class="wrap bar">
     <a class="brand" href="https://lhscolweb.netlify.app/" aria-label="Volver a LHSCOL">
-      <span class="mark" aria-hidden="true">LH</span>
+      <img src="logo-lhscol.png" alt="" width="56" height="56">
       <span class="sep"></span>
       <span class="name">El College</span>
     </a>
@@ -412,7 +414,7 @@ ul,ol{padding:0;list-style:none}
   <div class="wrap">
     <div class="col">
       <div class="brand">
-        <span class="mark" aria-label="LHSCOL Comunidad">LH</span>
+        <img src="logo-lhscol.png" alt="LHSCOL Comunidad" width="60" height="60">
         <span class="sep"></span>
         <span class="name">El College</span>
       </div>
@@ -455,4 +457,3 @@ ul,ol{padding:0;list-style:none}
 </script>
 </body>
 </html>
-
